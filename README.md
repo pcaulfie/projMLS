@@ -19,6 +19,7 @@ The repository contains the following:
 ## Summary
 The objective of this project is to create a web service that uses machine learning to make predictions based on the *powerproduction* data set. In the project,
 * I develop a number of models which aim to accurately predicts wind turbine power output from wind speed values, found the data set. 
+* I select the best model which I will use as the basis for my python script which will be used to drive the web service.
 * I develop a web service that will respond with predicted power values based on speed values sent as HTTP requests. 
 
 
