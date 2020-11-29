@@ -9,7 +9,7 @@ The repository contains the following:
 
 1. A file containing the data set called *powerproduction.csv*.
 1. A [Jupyter notebook](https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb) that trains a model using the data set. 
-1. Python script *XXXX.PY* that runs a web service based on the model, as above.
+1. Python script *powerapp.py* that runs a web service based on the model, as above.
 1. Dockerfile *xxxx* to build and run the web service in a container.
 1. Requirements.txt file which lists all packages needed to run the script.
 1. Gitignore file
@@ -26,6 +26,18 @@ The objective of this project is to create a web service that uses machine learn
 ## Installation
 
 - I recommend that you install the [Anaconda](https://www.anaconda.com/distribution/) distribution of python which contains all the libraries used, as well as an instance of Jupyter notebook.
+
+## Instructions
+  ### Windows
+  set FLASK_APP=powerapp.py
+  python -m flask run
+  
+  docker build . -t powerapp-image
+  docker run --name powerapp-container -d -p 5000:5000 powerapp-image
+ 
+ ### Linux
+  export FLASK_APP=powerapp.py
+  python3 -m flask run
 
 ### Clone
 
