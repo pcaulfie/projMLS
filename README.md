@@ -8,20 +8,20 @@ This repository contains my submission for the Tasks assessment for Machine Lear
 The repository contains the following:
 
 1. A file containing the data set called *powerproduction.csv*.
-1. A [Jupyter notebook](https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb) that trains a model using the data set. In the notebook you should explain your model and give an analysis of its accuracy.
+1. A [Jupyter notebook](https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb) that trains a model using the data set. 
 1. Python script *XXXX.PY* that runs a web service based on the model, as above.
-1. Dockerfile to build and run the web service in a container.
+1. Dockerfile *xxxx* to build and run the web service in a container.
+1. Requirements.txt file which lists all packages needed to run the script.
 1. Gitignore file
 1. Images folder containing some images used in the readme and jupyter notebook.
 1. Licence
 1. Readme
 
 ## Summary
-The objective of this project is to create a web service that uses machine learning to make predictions based on the *powerproduction* data set. In the project,
-* I develop a number of models which aim to accurately predicts wind turbine power output from wind speed values, found the data set. 
-* I select the best model which I will use as the basis for my python script which will be used to drive the web service.
-* I develop a web service that will respond with predicted power values based on speed values sent as HTTP requests. 
-
+The objective of this project is to create a web service that uses machine learning to make predictions based on the *powerproduction* data set. The project consiste of the following elements:
+* A jupyter notebook, where I train a number of models which aim to accurately predicts wind turbine power output from wind speed values, found in the data set. Contained in the notebook, I explain each model and give an analysis of its accuracy.
+* A python script, which uses the best model. This script will run the web service.
+* A dockerfile to build and run the web service in a container. This will respond with predicted power values based on speed values sent as HTTP requests. 
 
 ## Installation
 
