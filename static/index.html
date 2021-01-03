@@ -26,9 +26,9 @@
           <div class="col-sm">
             <button type="button" class="btn btn-primary" onclick="getPower()">Get Power</button>
           </div>
-          <!-- <div class="col-sm">
+          <div class="col-sm">
             <button type="button" class="btn btn-success" id="uniform-button">Uniform</button>
-          </div> -->
+          </div>
           <div class="col-sm">
             <button type="button" class="btn btn-primary" id="normal-button">Normal</button>
           </div>
@@ -62,25 +62,62 @@
     <!-- Call powerapp api found in powerapp.py -->  
     <script>
         // Set up AJAX requests - adapted from stack overflow posts.
+        // $("#normal-button").click(function(e) {
+        //     e.preventDefault();
+        //     $.getJSON("/api/normal", function(data) {
+        //         console.log(data.value);
+        //         $('#output').val(data.value);
+        //     });
+        // });
         $("#normal-button").click(function(e) {
+            // var rates = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
+            // var params = {'windspeed':rates};
             e.preventDefault();
-            $.getJSON("/api/normal", function(data) {
+            $.getJSON("/api/normal",{ 'windspeed':15.666 }, function (data) {
+                console.log(data.name);
                 $('#output').val(data.value);
             });
+            // $.post("/api/normal", params, function(data) {
+                
+            //     //data:JSON.stringify(params),
+            //     console.log(data.value);
+            //     $('#output').val(data.value);
+            // });
         });
         $("#uniform-button").click(function(e) {
             e.preventDefault();
             $.getJSON("/api/uniform", function(data) {
+                console.log(data.value);
                 $('#output').val(data.value);
             });
         });
-        function getPower(){
-            var windspeed = document.getElementById('input').value;
-            // var params = {'USD_EUR_FXRATE':rates};
-            console.log(windspeed);
-            $('#output1').val(windspeed);
+        // function getPower(){
+        //     var windspeed = document.getElementById('input').value;
+        //     // var params = {'USD_EUR_FXRATE':rates};
+        //     console.log(windspeed);
+        //     $('#output1').val(windspeed);
             
-        }
+        // }
+        // function getPower(){
+        //     var rates = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
+        //     var params = {'windspeed':rates};
+        //     console.log(params);
+        //     host= window.location.origin
+        //     $.ajax({                
+        //         url:host+"/api/normal",
+        //         data:JSON.stringify(params),
+        //         method:"PUT",
+        //         dataType:"JSON",
+        //         contentType: "application/json; charset=utf-8",
+        //         success:function(result){
+        //             console.log(result)
+        //             $('#output1').val(result);                     
+        //         },
+        //         error:function(xhr,status,error){
+        //                 console.log("error"+error)
+        //         }
+        //     })
+        // }
     </script>
   </body>
 </html>
