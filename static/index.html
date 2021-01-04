@@ -62,28 +62,31 @@
     <!-- Call powerapp api found in powerapp.py -->  
     <script>
         // Set up AJAX requests - adapted from stack overflow posts.
-        // $("#normal-button").click(function(e) {
-        //     e.preventDefault();
-        //     $.getJSON("/api/normal", function(data) {
-        //         console.log(data.value);
-        //         $('#output').val(data.value);
-        //     });
-        // });
         $("#normal-button").click(function(e) {
-            // var rates = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
-            // var params = {'windspeed':rates};
+            var rates = document.getElementById('input').value;
+            var params = { 'loc':rates };
             e.preventDefault();
-            $.getJSON("/api/normal",{ 'windspeed':15.666 }, function (data) {
-                console.log(data.name);
+            $.getJSON("/api/normal", params, function(data) {
+                var wind = 
+                console.log(data.value);
                 $('#output').val(data.value);
             });
+        });
+        // $("#normal-button").click(function(e) {
+        //     // var rates = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
+        //     // var params = {'windspeed':rates};
+        //     e.preventDefault();
+        //     $.getJSON("/api/normal",{ 'windspeed':15.666 }, function (data) {
+        //         console.log(data.name);
+        //         $('#output').val(data.value);
+        //     });
             // $.post("/api/normal", params, function(data) {
                 
             //     //data:JSON.stringify(params),
             //     console.log(data.value);
             //     $('#output').val(data.value);
             // });
-        });
+        // });
         $("#uniform-button").click(function(e) {
             e.preventDefault();
             $.getJSON("/api/uniform", function(data) {
@@ -98,26 +101,27 @@
         //     $('#output1').val(windspeed);
             
         // }
-        // function getPower(){
-        //     var rates = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
-        //     var params = {'windspeed':rates};
+        function getPower(){
+            // var rate = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
+            // var params = {'windspeed':rate};
         //     console.log(params);
-        //     host= window.location.origin
-        //     $.ajax({                
-        //         url:host+"/api/normal",
-        //         data:JSON.stringify(params),
-        //         method:"PUT",
-        //         dataType:"JSON",
-        //         contentType: "application/json; charset=utf-8",
-        //         success:function(result){
-        //             console.log(result)
-        //             $('#output1').val(result);                     
-        //         },
-        //         error:function(xhr,status,error){
-        //                 console.log("error"+error)
-        //         }
-        //     })
-        // }
+            
+            $.ajax({                
+                url:"http://127.0.0.1:5000/api/power",
+                //data:JSON.stringify(params),
+                method:"GET",
+                data: JSON.stringify({'windspeed':15.75}),
+                dataType:"JSON",
+                contentType: "application/json; charset=utf-8",
+                success:function(result){
+                    console.log(result)
+                    $('#output').val(result.value);                     
+                },
+                error:function(xhr,status,error){
+                        console.log("error"+error)
+                }
+            })
+        }
     </script>
   </body>
 </html>
