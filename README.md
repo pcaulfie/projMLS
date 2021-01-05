@@ -5,7 +5,7 @@
 ## Introduction
 This repository contains my submission for the Tasks assessment for Machine Learning and Statistics in 2020. The objective of this project is to create a web service that uses machine learning to make predictions based on the *powerproduction* data set.
 
-![Wind Turbines](static/Image.png)
+![Wind Turbines](static/wind-turbines.jpeg)
 
 The repository contains the following:
 
