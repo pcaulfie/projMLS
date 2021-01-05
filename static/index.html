@@ -19,31 +19,19 @@
     <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input class="form-control" id="input" type=number step=0.01 placeholder="Enter Windspeed" > <br />
+            <input class="form-control" id="input" type=number step=0.01 placeholder="ENTER WIND SPEED VALUE HERE ## input a value between 7.5 and 24.5 meters per second ##" > <br />
+          </div>
+        </div>
+        <div class="row">          
+          <div class="col-sm">
+            <button type="button" class="btn btn-primary" id="normal-button">PREDICT POWER VALUES</button>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary" onclick="getPower()">Get Power</button>
+          <div class="col-sm">            
+            <input class="form-control" id="output" type="text" placeholder="Wind turbine power output prediction in kilowatts" readonly>
           </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-success" id="uniform-button">Uniform</button>
-          </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary" id="normal-button">Normal</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <!-- <input class="form-control" id="output1" type="text" placeholder="Answer goes here."> -->
-            <input class="form-control" id="output" type="text" placeholder="Power number here.." readonly>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-              <input class="form-control" id="output1" type="text" placeholder="Answer goes here.">              
-            </div>
-          </div>
+        </div>        
       </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -63,65 +51,17 @@
     <script>
         // Set up AJAX requests - adapted from stack overflow posts.
         $("#normal-button").click(function(e) {
-            var rates = document.getElementById('input').value;
-            var params = { 'loc':rates };
+            // pass parameter to server using getson method - adapted from https://www.codeproject.com/Questions/1046255/How-Can-I-Pass-Parameters-To-A-Jquery-Getjson-Meth
+            var speed = document.getElementById('input').value; // 
+            var params = { 'wind':speed };
             e.preventDefault();
-            $.getJSON("/api/normal", params, function(data) {
+            $.getJSON("/api/model", params, function(data) {
                 var wind = 
                 console.log(data.value);
                 $('#output').val(data.value);
             });
-        });
-        // $("#normal-button").click(function(e) {
-        //     // var rates = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
-        //     // var params = {'windspeed':rates};
-        //     e.preventDefault();
-        //     $.getJSON("/api/normal",{ 'windspeed':15.666 }, function (data) {
-        //         console.log(data.name);
-        //         $('#output').val(data.value);
-        //     });
-            // $.post("/api/normal", params, function(data) {
-                
-            //     //data:JSON.stringify(params),
-            //     console.log(data.value);
-            //     $('#output').val(data.value);
-            // });
-        // });
-        $("#uniform-button").click(function(e) {
-            e.preventDefault();
-            $.getJSON("/api/uniform", function(data) {
-                console.log(data.value);
-                $('#output').val(data.value);
-            });
-        });
-        // function getPower(){
-        //     var windspeed = document.getElementById('input').value;
-        //     // var params = {'USD_EUR_FXRATE':rates};
-        //     console.log(windspeed);
-        //     $('#output1').val(windspeed);
-            
-        // }
-        function getPower(){
-            // var rate = document.getElementById('input').value;  // get an input textbox value directly (without wrapping the input element inside a form element
-            // var params = {'windspeed':rate};
-        //     console.log(params);
-            
-            $.ajax({                
-                url:"http://127.0.0.1:5000/api/power",
-                //data:JSON.stringify(params),
-                method:"GET",
-                data: JSON.stringify({'windspeed':15.75}),
-                dataType:"JSON",
-                contentType: "application/json; charset=utf-8",
-                success:function(result){
-                    console.log(result)
-                    $('#output').val(result.value);                     
-                },
-                error:function(xhr,status,error){
-                        console.log("error"+error)
-                }
-            })
-        }
+        });              
+        
     </script>
   </body>
 </html>
