@@ -21,13 +21,13 @@ The repository contains the following:
 
 | File |      Title                | Description |Link|
 |------|---------------------------|---------|------|
-| 1    | Project 2020 - Machine Learning and Statistics.ipynb | A jupyter notebook, where I train several models which aim to accurately predicts wind turbine power output from wind speed values, found in the data set. Contained in the notebook, I explain each model and give an analysis of its accuracy|https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb|
+| 1    | Project 2020 - Machine Learning and Statistics.ipynb | A jupyter notebook, where I train several models using machine learning to make predictions based on the *powerproduction* data set. Contained in the notebook, I explain each model and give an analysis of its accuracy.|https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb|
 | 2    | windapp.py | A python script, which uses the best model. This script will run the web service. |https://github.com/pcaulfie/projMLS/blob/main/windapp.py|
 | 3    | Dockerfile | A dockerfile to build and run the web service in a container.[1]  This will respond with predicted power values based on speed values sent as HTTP requests.  |https://github.com/pcaulfie/projMLS/blob/main/Dockerfile
-| 4    | powerproduction.csv | A file containing the data set used to develop the model |https://github.com/pcaulfie/projMLS/blob/main/powerproduction.csv|
-| 5   | requirements.txt | A file which lists all packages needed to run the script [1]  |https://github.com/pcaulfie/projMLS/blob/main/requirements.txt|
-| 6    | index.html | A web interface, using jquery to pass data to and from windapp.py script |https://github.com/pcaulfie/projMLS/blob/main/static/index.html|
-| 7    | .dockerignore | File containing a a list of files and/or directories instructs the docker daemon to ignore when building the image (docker build) [1] |https://github.com/pcaulfie/projMLS/blob/main/.dockerignore|
+| 4    | powerproduction.csv | A file containing the data set used to develop the model. |https://github.com/pcaulfie/projMLS/blob/main/powerproduction.csv|
+| 5   | requirements.txt | A file which lists all packages needed to run the script. [1]  |https://github.com/pcaulfie/projMLS/blob/main/requirements.txt|
+| 6    | index.html | A web interface, using jquery to pass data to and from windapp.py script. |https://github.com/pcaulfie/projMLS/blob/main/static/index.html|
+| 7    | .dockerignore | File containing a list of files and/or directories instructs the docker daemon to ignore when building the image (docker build). [1] |https://github.com/pcaulfie/projMLS/blob/main/.dockerignore|
 | 9    |.gitignore | A file used to tell git which files are not needed to be added to the repository. |https://github.com/pcaulfie/projMLS/blob/main/.gitignore|
 
 ## Installation
@@ -35,10 +35,10 @@ The repository contains the following:
 ### Clone This Repository [4]
 | Step |      Task                | Instructions |
 |------|---------------------------|---------|
-| 1    | Install Anaconda distribution of python which contains all the libraries used| [Anaconda](https://www.anaconda.com/distribution/)|
-| 2    | Launch Cmder or other similar console| cmder|
-| 3    | create a folder where you want to clone the repository| for example *cd folder/to/clone-into/*|
-| 4    | Specify URL of the repository you want to clone| *git clone https://github.com/pcaulfie/projMLS.git*|
+| 1    | Install Anaconda distribution of python which contains all the libraries used.| [Anaconda](https://www.anaconda.com/distribution/)|
+| 2    | Launch Cmder or other similar console.| cmder|
+| 3    | create a folder where you want to clone the repository.| for example *cd folder/to/clone-into/*|
+| 4    | Specify URL of the repository you want to clone.| *git clone https://github.com/pcaulfie/projMLS.git*|
 
 ### Requirements.txt
 Here is a list of the packages needed to run this application. 
@@ -73,7 +73,7 @@ Werkzeug==1.0.1
 | 3   | Run   | docker run --name power-container -d -p 5000:5000 power-app |
 | 4    | open web app on local host   | http://127.0.0.1:5000/ |
 
-### Troubleshooting Docker [3]
+### Troubleshooting Docker Issues [3]
 1. Open Docker Desktop and check that the container you built is running - see screenshot below to see an example.
 ![Step1](static/Screenshot3.JPG)
 2. Click on the container name to view the logs - see screenshot below to see an example.
