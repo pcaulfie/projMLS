@@ -83,7 +83,7 @@ Werkzeug==1.0.1
 1. Open web app on local host http://127.0.0.1:5000/
 2. Enter Wind Speed Value in white input box: input a value between 7.5 and 24.5 meters per second. 
 ![Step1](static/Screenshot1.JPG)
-3. Click on Blue Button and value will be displayed in greyed out box - this will be the value corresponding to the wind turbine power output prediction in kilowatts.
+3. Click on Predict Power Values (Blue Button) and the result will be displayed in greyed out box - this result displayed is the wind turbine power output prediction in kilowatts.
 ![Step2](static/Screenshot2.JPG)
 
 ## License
