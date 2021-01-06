@@ -74,6 +74,9 @@ Werkzeug==1.0.1
 | 4    | open web app on local host   | http://127.0.0.1:5000/ |
 
 
+![Step1](static/Screenshot1.jpg)
+![Step2](static/Screenshot2.jpg)
+
 ## License
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
