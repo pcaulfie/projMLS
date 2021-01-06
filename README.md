@@ -1,17 +1,24 @@
 # Project 2020
 
-## Project for Machine Learning and Statistics in 2020.
+## Course: Machine Learning and Statistics
+
+* Student Name: Paul Caulfield
+* Student No: G00376342
+
+* Lecturer: Ian McLoughlin 
+
+An assignment submitted in part fulfilment of the requirements of the Higher Diploma in Science - Data Analytics: 2020-2021, Galway Mayo Institute of Technology.
 
 ## Introduction
-This repository contains my submission for the Tasks assessment for Machine Learning and Statistics in 2020. The objective of this project is to create a web service that uses machine learning to make predictions based on the *powerproduction* data set.
+This repository contains my submission for Project 2020 for Machine Learning and Statistics. The objective of this project is to create a web service that uses machine learning to make predictions based on the *powerproduction* data set.
 
 ![Wind Turbines](static/wind-turbines.jpg)
+(Image courtesy: Shutterstock/Robert-Lucian-Crusitu)
 
 The repository contains the following:
 
 ## Contents 
 
-*Main Web App - Local Host*
 | File |      Title                | Description |Link|
 |------|---------------------------|---------|------|
 | 1    | Project 2020 - Machine Learning and Statistics.ipynb | A jupyter notebook, where I train a number of models which aim to accurately predicts wind turbine power output from wind speed values, found in the data set. Contained in the notebook, I explain each model and give an analysis of its accuracy|https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb|
