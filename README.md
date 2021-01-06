@@ -21,7 +21,7 @@ The repository contains the following:
 
 | File |      Title                | Description |Link|
 |------|---------------------------|---------|------|
-| 1    | Project 2020 - Machine Learning and Statistics.ipynb | A jupyter notebook, where I train a number of models which aim to accurately predicts wind turbine power output from wind speed values, found in the data set. Contained in the notebook, I explain each model and give an analysis of its accuracy|https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb|
+| 1    | Project 2020 - Machine Learning and Statistics.ipynb | A jupyter notebook, where I train several models which aim to accurately predicts wind turbine power output from wind speed values, found in the data set. Contained in the notebook, I explain each model and give an analysis of its accuracy|https://github.com/pcaulfie/projMLS/blob/main/Project%202020%20-%20Machine%20Learning%20and%20Statistics.ipynb|
 | 2    | windapp.py | A python script, which uses the best model. This script will run the web service. |https://github.com/pcaulfie/projMLS/blob/main/windapp.py|
 | 3    | Dockerfile | A dockerfile to build and run the web service in a container.[1]  This will respond with predicted power values based on speed values sent as HTTP requests.  |https://github.com/pcaulfie/projMLS/blob/main/Dockerfile
 | 4    | powerproduction.csv | A file containing the data set used to develop the model |https://github.com/pcaulfie/projMLS/blob/main/powerproduction.csv|
@@ -66,16 +66,25 @@ Werkzeug==1.0.1
 
 
 ### Set Up Docker [3]
-| Step |      Task                | Windows |
+| Step |      Task                | Command |
 |------|---------------------------|---------|
 | 1    | Install Docker Desktop  | https://docs.docker.com/docker-for-windows/install/|
 | 2    | Build Image   | docker build -t power-app . |
 | 3   | Run   | docker run --name power-container -d -p 5000:5000 power-app |
 | 4    | open web app on local host   | http://127.0.0.1:5000/ |
 
+### Troubleshooting Docker [3]
+1. Open Docker Desktop and check that the container you built is running - see screenshot below to see an example.
+![Step1](static/Screenshot3.JPG)
+2. Click on the container name to view the logs - see screenshot below to see an example.
+![Step2](static/Screenshot4.JPG)
 
-![Step1](static/Screenshot1.jpg)
-![Step2](static/Screenshot2.jpg)
+### How to Use The App
+1. Open web app on local host http://127.0.0.1:5000/
+2. Enter Wind Speed Value in white input box: input a value between 7.5 and 24.5 meters per second. 
+![Step1](static/Screenshot1.JPG)
+3. Click on Blue Button and value will be displayed in greyed out box - this will be the value corresponding to the wind turbine power output prediction in kilowatts.
+![Step2](static/Screenshot2.JPG)
 
 ## License
 
@@ -87,7 +96,7 @@ Werkzeug==1.0.1
 2020, [Online; accessed 5-January-2021]. [Online]. Available: https://web.microsoftstream.com/video/03bfee62-fdeb-4dbe-a7d2-393d1aa40b66
 * [2] McLoughlin, I., “Random numerical app ,”
 2020, [Online; accessed 5-January-2021]. [Online]. Available: https://github.com/ianmcloughlin/random-app/blob/master/README.md
-* [3] Vain, M., “Foreign exchange rates API with currency conversion ,”
+* [3] Docker.com, “Install Docker Desktop on Windows ,”
 2017, [Online; accessed 5-January-2021]. [Online]. Available: https://docs.docker.com/docker-for-windows/install/
 * [4] Github, “Cloning a repository ,”
 2020, [Online; accessed 27-December-2020]. [Online]. Available: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository
